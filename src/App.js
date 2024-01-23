@@ -25,11 +25,12 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './App.css';
 
-import MainRoute from './main';
 import { IonReactRouter } from '@ionic/react-router';
 import Tabs from './navigation/Tabs';
 import Example from './pages/Example';
-import Login from './auth/Login';
+import WellcomePage from './pages/wellcom/WellcomePage';
+import LoginPage from './pages/auth/LoginPage';
+import RegisterPage from './pages/auth/RegisterPage';
 import { useSelector } from 'react-redux';
 setupIonicReact({ mode: 'ios' });
 
@@ -75,8 +76,10 @@ export default function App() {
           {
             !isAuthenticated ? (
               <>
-                <Redirect exact from="/" to="/login" />
-                <Route path="/login" component={Login} />
+                <Redirect exact from="/" to="/wellcome" />
+                <Route path="/wellcome" component={WellcomePage} />
+                <Route path="/register" component={RegisterPage} />
+                <Route path="/login" component={LoginPage} />
               </>
             ) : (
               <>
@@ -86,6 +89,7 @@ export default function App() {
               </>
             )
           }
+
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp >

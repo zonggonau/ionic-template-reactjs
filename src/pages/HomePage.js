@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { IonCard, IonTitle, IonCardContent, IonMenuButton, IonButtons, IonToolbar, IonHeader, IonCardHeader, IonButton, IonCardTitle, IonImg, IonContent, IonPage } from '@ionic/react';
+import { IonTitle, IonMenuButton, IonButtons, IonToolbar, IonHeader, IonContent, IonPage } from '@ionic/react';
 import { fetchProductsAsync } from '../slice/productsSlice';
 import { add } from '../slice/cartSlice';
 import { useSelector, useDispatch } from 'react-redux';

@@ -1,6 +1,5 @@
 import React from 'react';
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonRouter } from '@ionic/react';
-import Header from '../components/Header';
+import { IonButton, IonContent, IonPage, useIonRouter } from '@ionic/react';
 import TabHeader from '../components/TabHeader';
 import { useDispatch } from 'react-redux';
 import { Logout } from '../slice/loginSlice';

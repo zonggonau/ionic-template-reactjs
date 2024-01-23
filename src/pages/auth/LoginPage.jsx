@@ -13,10 +13,10 @@ import {
     IonCardHeader
 } from '@ionic/react';
 import { useDispatch, useSelector } from 'react-redux';
-import { LoginAuth } from '../slice/loginSlice';
+import { LoginAuth } from '../../slice/loginSlice';
 import { useIonRouter } from '@ionic/react';
 
-const Login = () => {
+const LoginPage = () => {
     const navigate = useIonRouter();
     const [email, setEmail] = useState('cristoperzonggonau@gmail.com');
     const [password, setPassword] = useState('Z0ngg0n4U');
@@ -76,4 +76,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default LoginPage;

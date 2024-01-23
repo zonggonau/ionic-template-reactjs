@@ -20,27 +20,27 @@ function Tabs() {
                 <Route path="/app/wishlist" render={() => <WishlistPage />} />
                 <Route path="/app/history" render={() => <HistoryPage />} />
             </IonRouterOutlet>
-            <IonTabBar slot="bottom" color={'light'} >
+            <IonTabBar slot="bottom" color={'light'} className='pt-3 pb-2 rounded-tl-3xl rounded-tr-3xl'>
                 <IonTabButton tab="home" href="/app/home">
-                    <IonIcon icon={home} />
+                    <IonIcon icon={home} size='medium' />
                     <IonLabel>Home</IonLabel>
                 </IonTabButton>
                 <IonTabButton tab="category" href="/app/category">
-                    <IonIcon icon={grid} />
+                    <IonIcon icon={grid} size='medium' />
                     <IonLabel>Category</IonLabel>
                 </IonTabButton>
                 <IonTabButton tab="official" href="/app/official">
-                    <IonIcon icon={storefront} />
+                    <IonIcon icon={storefront} size='medium' />
                     <IonLabel>Official Store</IonLabel>
                 </IonTabButton>
                 <IonTabButton tab="wishlist" href="/app/wishlist">
-                    <IonIcon icon={heart} />
+                    <IonIcon icon={heart} size='medium' />
                     <IonLabel>wishlist</IonLabel>
                 </IonTabButton>
 
-                <IonTabButton tab="history" href="/app/history">
-                    <IonIcon icon={list} />
-                    <IonLabel>History</IonLabel>
+                <IonTabButton tab="history" href="/app/history" >
+                    <IonIcon icon={list} size='medium' />
+                    <IonLabel>Transaksi</IonLabel>
                 </IonTabButton>
             </IonTabBar>
         </IonTabs >
