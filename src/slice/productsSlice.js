@@ -38,9 +38,9 @@ export default productsSlice.reducer
 export const fetchProductsAsync = createAsyncThunk(
     'products/get',
     async () => {
-        let response = await fetch('https://dummyjson.com/products')
-        let { products } = await response.json()
-        return products;
+        let response = await fetch('http://localhost:1337/api/products')
+        let { data } = await response.json()
+        return data
     }
 )
 
