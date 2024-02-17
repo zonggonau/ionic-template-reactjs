@@ -6,6 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import store from './store';
 import { Provider } from 'react-redux';
 import { Auth0Provider } from '@auth0/auth0-react';
+import { SWRConfig } from 'swr';
+
+
+const HEADER = {
+  headers: {
+    Authorization: `Bearer ${process.env.REACT_APP_STRAPI_TOKEN}`
+  }
+}
+
+const HOST = process.env.REACT_APP_HOST_API;
+console.log(HOST);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,10 +31,12 @@ root.render(
           redirect_uri: "com.kasjadi.app://dev-nf65febdpbxg870d.jp.auth0.com/capacitor/com.kasjadi.app/callback"
         }}
       >
-        <App />
+        <SWRConfig value={{ refreshInterval: 3000, fetcher: (resource) => fetch(HOST + resource, HEADER).then(res => res.json()) }}>
+          <App />
+        </SWRConfig>
       </Auth0Provider>
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode >
 );
 
 // If you want to start measuring performance in your app, pass a function

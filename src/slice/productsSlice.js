@@ -28,6 +28,7 @@ const productsSlice = createSlice({
         builder.addCase(getProductByID.rejected, (state) => {
             state.status = 'rejected'
         })
+
     }
 })
 

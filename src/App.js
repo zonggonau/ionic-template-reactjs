@@ -4,7 +4,7 @@ import { Browser } from '@capacitor/browser';
 import { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { setupIonicReact, IonApp, IonRouterOutlet } from '@ionic/react';
-import { Route, Redirect } from 'react-router-dom'
+import { } from "@ionic/react-router"
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -32,6 +32,9 @@ import WellcomePage from './pages/wellcom/WellcomePage';
 import LoginPage from './pages/auth/LoginPage';
 import RegisterPage from './pages/auth/RegisterPage';
 import { useSelector } from 'react-redux';
+import HomeOperator from './components/homepage/HomeOperator';
+import HomePriceList from './components/homepage/HomePricelist';
+import HomeDetail from './components/homepage/HomeDetail';
 setupIonicReact({ mode: 'ios' });
 
 export default function App() {
@@ -85,7 +88,9 @@ export default function App() {
               <>
                 <Redirect exact from="/" to="/app/home" />
                 <Route path="/app/*" component={Tabs} exact />
-                <Route path="/product/:id" component={Example} />
+                <Route path="/products/:type" component={HomeOperator} />
+                <Route path="/products/:type/:op" component={HomePriceList} />
+                <Route path="/products/:type/:op/:code" component={HomeDetail} />
               </>
             )
           }
